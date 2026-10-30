@@ -1,0 +1,52 @@
+# Compilação .NET / Visual Studio
+**/bin/
+**/obj/
+.vs/
+TestResults/
+*.user
+*.suo
+*.pdb
+
+# Artefatos de publicação
+artifacts/
+outputs/
+work/
+*.zip
+
+# Dados locais do IdleForge e WebView2
+IdleForge.db
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+BrowserData/
+EBWebView/
+User Data/
+Local Storage/
+Session Storage/
+IndexedDB/
+Cache/
+Code Cache/
+GPUCache/
+Service Worker/
+
+# Dados pessoais e operacionais
+Downloads/
+logs/
+*.log
+*.jsonl
+*.user.js
+*.bak
+*.backup
+*.tmp
+*.dmp
+*.pem
+*.pfx
+*.key
+appsettings.*.json
+
+# Sistema operacional e IDEs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

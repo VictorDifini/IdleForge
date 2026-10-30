@@ -1,0 +1,17 @@
+<Window x:Class="IdleForge.App.LocalScriptUpdatesWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Atualizações locais de userscripts" Width="980" Height="590" MinWidth="780" MinHeight="460" WindowStartupLocation="CenterOwner" Background="#0E1726" Foreground="White">
+ <Grid Margin="16"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <StackPanel><TextBlock Text="Verificar atualizações locais" FontSize="23" FontWeight="SemiBold"/><TextBlock x:Name="SummaryText" Text="A verificação só ocorre quando você solicita; nenhum arquivo é monitorado." Foreground="#9DB0C8" Margin="0,4,0,12"/></StackPanel>
+  <DataGrid Grid.Row="1" x:Name="UpdatesGrid" AutoGenerateColumns="False" CanUserAddRows="False" Background="#080D18" Foreground="White" SelectionMode="Single">
+   <DataGrid.Columns>
+    <DataGridCheckBoxColumn Header="Atualizar" Binding="{Binding Selected, UpdateSourceTrigger=PropertyChanged}" Width="70"/>
+    <DataGridTextColumn Header="Script" Binding="{Binding Name}" Width="2*"/>
+    <DataGridTextColumn Header="Instalada" Binding="{Binding InstalledVersion}" Width="90"/>
+    <DataGridTextColumn Header="Local" Binding="{Binding LocalVersion}" Width="90"/>
+    <DataGridTextColumn Header="Estado" Binding="{Binding StateText}" Width="150"/>
+    <DataGridTextColumn Header="Arquivo local" Binding="{Binding Path}" Width="3*"/>
+   </DataGrid.Columns>
+  </DataGrid>
+  <TextBlock Grid.Row="2" x:Name="StatusText" Foreground="#E5B567" TextWrapping="Wrap" Margin="2,10"/>
+  <WrapPanel Grid.Row="3" HorizontalAlignment="Right"><Button Content="Verificar novamente" Click="Check_Click"/><Button Content="Selecionar alterações" Click="SelectChanged_Click"/><Button Content="Vincular arquivo…" Click="Link_Click"/><Button Content="Atualizar selecionados" Background="#168B6A" Click="Update_Click"/><Button Content="Fechar" Click="Close_Click"/></WrapPanel>
+ </Grid>
+</Window>

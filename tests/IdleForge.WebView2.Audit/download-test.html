@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>IdleForge download/import audit</title>
+<input id="import" type="file" multiple>
+<button id="blob">JSON Blob</button>
+<button id="data">TXT data URL</button>
+<button id="javascript">CSV JavaScript</button>
+<pre id="result"></pre>
+<script>
+  const save = (href, name) => { const a = document.createElement('a'); a.href = href; a.download = name; a.click(); };
+  blob.onclick = () => save(URL.createObjectURL(new Blob([JSON.stringify({ source: 'IdleForge', ok: true })], { type: 'application/json' })), 'idleforge-blob.json');
+  data.onclick = () => save('data:text/plain;charset=utf-8,IdleForge%20data%20URL', 'idleforge-data.txt');
+  javascript.onclick = () => save(URL.createObjectURL(new Blob(['a,b\n1,2'], { type: 'text/csv' })), 'idleforge-script.csv');
+  import.onchange = async () => result.textContent = JSON.stringify(await Promise.all([...import.files].map(async file => ({ name: file.name, size: file.size, text: await file.text() }))));
+</script>

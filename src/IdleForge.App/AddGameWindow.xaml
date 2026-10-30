@@ -1,0 +1,7 @@
+<Window x:Class="IdleForge.App.AddGameWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Adicionar jogo" Width="470" SizeToContent="Height" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Background="#0E1726">
+ <Grid Margin="26"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <TextBlock Text="Novo jogo web" Foreground="White" FontSize="24" FontWeight="SemiBold" Margin="0,0,0,20"/><TextBlock Grid.Row="1" Text="Nome do jogo" Foreground="#A8B5C7"/><TextBox x:Name="NameBox" Grid.Row="2" Margin="0,6,0,14" Padding="10"/>
+  <StackPanel Grid.Row="3"><TextBlock Text="Endereço HTTP/HTTPS" Foreground="#A8B5C7"/><TextBox x:Name="UrlBox" Margin="0,6,0,14" Padding="10" Text="https://"/><TextBlock Text="Nome do perfil/conta" Foreground="#A8B5C7"/><TextBox x:Name="ProfileBox" Margin="0,6" Padding="10" Text="Principal"/></StackPanel>
+  <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right"><Button Content="Cancelar" Padding="16,8" Margin="5" IsCancel="True" Click="Cancel_Click"/><Button Content="Criar sessão" Padding="16,8" Margin="5" Background="#168B6A" Foreground="White" IsDefault="True" Click="Save_Click"/></StackPanel>
+ </Grid>
+</Window>

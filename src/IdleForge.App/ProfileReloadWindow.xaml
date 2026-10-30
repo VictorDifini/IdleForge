@@ -1,0 +1,9 @@
+<Window x:Class="IdleForge.App.ProfileReloadWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Recarregar contas" Width="470" Height="520" WindowStartupLocation="CenterOwner" Background="#0D1727" Foreground="White">
+ <Grid Margin="20">
+  <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+  <StackPanel><TextBlock x:Name="Heading" Text="Aplicar e recarregar contas" FontSize="21" FontWeight="SemiBold"/><TextBlock x:Name="Description" Text="Somente as contas marcadas serão recarregadas. As demais continuarão funcionando." Foreground="#E5B567" TextWrapping="Wrap" Margin="0,5,0,12"/></StackPanel>
+  <WrapPanel Grid.Row="1" Margin="0,0,0,8"><Button Content="Conta atual" Click="Current_Click" Padding="9,5"/><Button Content="Selecionar todas" Click="All_Click" Padding="9,5"/><Button Content="Desmarcar todas" Click="None_Click" Padding="9,5"/></WrapPanel>
+  <ListBox x:Name="ProfilesList" Grid.Row="2" Background="#111D30"><ListBox.ItemTemplate><DataTemplate><CheckBox Content="{Binding Name}" IsChecked="{Binding Selected,Mode=TwoWay}" Foreground="White" Padding="9"/></DataTemplate></ListBox.ItemTemplate></ListBox>
+  <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0"><Button Content="Cancelar" IsCancel="True" Padding="12,7" Margin="0,0,8,0"/><Button x:Name="ConfirmButton" Content="Recarregar selecionadas" Click="Apply_Click" IsDefault="True" Padding="14,7" Background="#168B6A"/></StackPanel>
+ </Grid>
+</Window>
